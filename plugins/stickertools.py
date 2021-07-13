@@ -17,11 +17,11 @@
 • `{i}convert <gif/img/sticker>`
     Reply to sticker to convert into gif or image.
 
-• `{i}kang <reply to image/sticker>`
-    Kang the sticker (add to your pack).
+• `{i}steal <reply to image/sticker>`
+    Steal the sticker (add to your pack).
 
-• `{i}packkang <pack name>`
-    Kang the Complete sticker set (with custom name).
+• `{i}stealpack <pack name>`
+    Steal the Complete sticker set (with custom name).
 
 • `{i}round <reply to any media>`
     To extract round sticker.
@@ -209,7 +209,7 @@ async def pack_kangish(_):
 
 
 @ultroid_cmd(
-    pattern="kang",
+    pattern="steal",
 )
 async def hehe(args):
     xx = await eor(args, "`Processing...`")
@@ -264,7 +264,7 @@ async def hehe(args):
 
     if photo:
         splat = args.text.split()
-        emoji = "🏵"
+        emoji = "⚡︎"
         pack = 1
         if len(splat) == 3:
             pack = splat[2]  # User sent ultroid_both
@@ -275,7 +275,7 @@ async def hehe(args):
             else:
                 emoji = splat[1]
 
-        packname = f"ult_{user.id}_{pack}"
+        packname = f"𝐀𝐤𝐢𝐫𝐚'𝐬 𝐏𝐚𝐜𝐤"
         packnick = f"@{user.username}'s Pack {pack}"
         cmd = "/newpack"
         file = io.BytesIO()
@@ -286,7 +286,7 @@ async def hehe(args):
             image.save(file, "PNG")
         else:
             packname += "_anim"
-            packnick += " (Animated)"
+            packnick += " (𝐀𝐧𝐢𝐦𝐚𝐭𝐞𝐝)"
             cmd = "/newanimated"
 
         response = urllib.request.urlopen(
@@ -306,7 +306,7 @@ async def hehe(args):
                 x = await conv.get_response()
                 while "120" in x.text:
                     pack += 1
-                    packname = f"ult_{user.id}_{pack}"
+                    packname = f"𝐀𝐤𝐢𝐫𝐚'𝐬 𝐏𝐚𝐜𝐤"
                     packnick = f"@{user.username}'s Pack {pack}"
                     await xx.edit(
                         "`Switching to Pack "
@@ -409,9 +409,10 @@ async def hehe(args):
                 await conv.get_response()
                 await ultroid_bot.send_read_acknowledge(conv.chat_id)
         await xx.edit(
-            f"`Kanged!`\
-            \n`Emoji` - {emoji}\
-            \n`Sticker Pack` [here](t.me/addstickers/{packname})",
+            f"`[𝙎𝙩𝙚𝙖𝙡𝙚𝙙](t.me/addstickers/{packname}!`\
+            \n`𝙀𝙢𝙤𝙟𝙞` - {emoji}".
+
+            
             parse_mode="md",
         )
         try:
