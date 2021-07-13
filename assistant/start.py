@@ -20,8 +20,8 @@ Owner_info_msg = f"""
 **Owner** - {OWNER_NAME}
 **OwnerID** - `{OWNER_ID}`
 
-**Message Forwards** - {udB.get("PMBOT")}
-
+**Nothing More To Say
+.**
 
 """
 
