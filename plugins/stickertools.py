@@ -141,7 +141,7 @@ async def uconverter(event):
     await xx.delete()
 
 
-@ultroid_cmd(pattern="packkang")
+@ultroid_cmd(pattern="stealpack")
 async def pack_kangish(_):
     _e = await _.get_reply_message()
     if not _e:
@@ -149,7 +149,7 @@ async def pack_kangish(_):
     if len(_.text) > 9:
         _packname = _.text.split(" ", maxsplit=1)[1]
     else:
-        _packname = f"Ultroid Kang Pack By {_.sender_id}"
+        _packname = f"𝐀𝐤𝐢𝐫𝐚'𝐬 𝐏𝐚𝐜𝐤"
     if _e and _e.media and _e.media.document.mime_type == "image/webp":
         _id = _e.media.document.attributes[1].stickerset.id
         _hash = _e.media.document.attributes[1].stickerset.access_hash
@@ -202,7 +202,7 @@ async def pack_kangish(_):
             udB.set("PACKKANG", str(ok))
         await eor(
             _,
-            f"Pack Kanged Successfully.\nKanged Pack: [link](https://t.me/addstickers/{_r_e_s.set.short_name})",
+            f"Pack Stealed Successfully.\nKanged Pack: [link](https://t.me/addstickers/{_r_e_s.set.short_name})",
         )
     else:
         await eor(_, "Unsupported File")
